@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <!-- animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- font-family: 'Bitter', serif;
+font-family: 'Lora', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Source Serif Pro', serif; -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,100&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,300;0,600;0,700;1,200&family=Roboto+Slab:wght@300;500;600;800&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,700;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Lora", serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      .lead {
+        background: url(../assets/image/robot-4120890_1280.jpg);
+
+        background-attachment: fixed;
+      }
+
+      .lead-overlay {
+        background-color: black;
+        background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+      }
+      .personal-detail-title:after {
+        content: ":";
+        position: absolute;
+        right: 20px;
+        top: 0;
+        font-size: 20px;
+      }
+      /* Toggle B */
+      input:checked ~ .dot {
+        transform: translateX(100%);
+        background-color: #22c55e;
+      }
+      input:checked ~ .bb {
+        background-color: #ffffff;
+      }
+    </style>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body class="dark:bg-[#040303] bg-[#cdcdcd]">
+    <!-- Nav -->
+    <div
+      id="nav"
+      class="py-3 duration-200 animate__animated w-full absolute z-50"
+    >
+      <div class="container mx-auto px-5 md:px-8">
+        <!-- Navbar -->
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <div class="">
+            <div class="w-12">
+              <a href="#" title="logo">
+                <img
+                  src="../assets/image/logo.png"
+                  alt="PS logo"
+                  class="rounded-full"
+                />
+              </a>
+            </div>
+          </div>
+          <!-- Menu -->
+          <div
+            class="fixed top-0 md:top-auto duration-600 -left-full md:left-auto flex justify-center items-center h-screen md:h-auto w-full md:static mobile-menu z-10 bg-white md:bg-transparent backface-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 border border-green-500 w-10 h-10 flex justify-center items-center rounded-full mt-3 mr-3 close-menu md:hidden"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <ul
+              class="flex flex-col md:flex-row md:space-x-5 space-y-10 md:space-y-0 text-2xl md:text-base"
+            >
+              <li class="dark:text-slate-400 text-black md:text-white">
+                <a href="#about">About</a>
+              </li>
+              <li class="dark:text-slate-400 text-black md:text-white">
+                <a href="#section_experience">Experience</a>
+              </li>
+              <li class="dark:text-slate-400 text-black md:text-white">
+                <a href="#section_education">Education</a>
+              </li>
+              <li class="dark:text-slate-400 text-black md:text-white">
+                <a href="#section_skills">Skills</a>
+              </li>
+              <li class="dark:text-slate-400 text-black md:text-white">
+                <a href="#section_projects">Projects</a>
+              </li>
+
+              <li class="dark:text-slate-400 text-black md:text-white">
+                <a href="#section_papers" rel="noopener noreferrer">Papers</a>
+              </li>
+              <li class="dark:text-slate-400 text-black md:text-white">
+                <a href="#section_contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Dark Mode -->
+          <div class="flex items-center space-x-3">
+            <button
+              id="theme-toggle"
+              type="button"
+              class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+            >
+              <svg
+                id="theme-toggle-dark-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                ></path>
+              </svg>
+              <svg
+                id="theme-toggle-light-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="md:hidden menu-open rounded-full border border-slate-500 w-8 h-8 flex justify-center items-center"
+            >
+              <i class="fa-solid fa-bars dark:text-white"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero text box -->
+
+    <div
+      class="lead h-screen w-full bg-cover bg-no-repeat overflow-hidden flex justify-center items-center"
+    >
+      <!-- lead content -->
+      <div class="lead-content absolute space-y-4 text-center">
+        <div class="flex justify-center pt-11">
+          <img
+            src="../assets/image/woman-3116587_1280.jpg"
+            alt=""
+            class="w-60 h-60 rounded-full shadow-md shadow-slate-600"
+          />
+        </div>
+        <div class="space-y-2">
+          <h1 class="sm:text-6xl text-4xl font-normal text-white">
+            Pann Thinzar Seint
+          </h1>
+          <h3 class="sm:text-4xl text-2xl text-orange-200">
+            Software Engineer and AI/ML Researcher
+          </h3>
+        </div>
+        <!-- arrow down -->
+        <div class="flex justify-center pt-11 z-10">
+          <a href="#">
+            <span
+              class="w-10 h-10 rounded-full border border-white flex justify-center items-center absolute hover:rotate-180 duration-200"
+            >
+              <i class="fa-solid fa-angle-down text-white text-xl"></i></span
+          ></a>
+        </div>
+      </div>
+
+      <!-- lead overlay -->
+      <div
+        class="lead-overlay h-screen w-full top-0 right-0 bottom-0 left-0 dark:bg-[rgba(0,15,35,0.8)]"
+      ></div>
+    </div>
+    <!-- About -->
+    <section
+      class="text-gray-600 body-font pt-10"
+      id="about"
+      data-aos="fade-right"
+    >
+      <div
+        class="container md:px-20 px-12 py-6 mx-auto duration-200 animate__animated"
+      >
+        <div class="">
+          <div class="p-2 md:w-full w-full">
+            <div
+              class="h-full flex items-center border-gray-200 p-4 rounded-lg bg-[#f7f7f7] dark:bg-[#121212]"
+            >
+              <div class="">
+                <h2
+                  class="text-slate-900 dark:text-slate-300 text-center sm:text-3xl text-2xl title-font font-semibold py-6"
+                >
+                  About Me
+                </h2>
+                <div class="">
+                  <div class="container mx-auto px-14">
+                    <p
+                      class="mb-4 text-slate-900 dark:text-slate-300 text-base"
+                    >
+                      After graduating with honors in Computer Engineering at
+                      University of Bologna, I further specialized my studies
+                      towards AI and Cloud Computing by undertaking a Second
+                      Level Specializing Master’s program at Polytechnic
+                      University of Turin, achieved with full marks.<br />
+                      My skills focus on Artificial Intelligence, Cloud
+                      Computing, Machine Learning, Computer Vision and Robotics,
+                      complemented by a solid Software Engineering mindset.<br />
+                      I consider myself a broad-minded, proactive and
+                      trustworthy individual with effective communication
+                      skills.
+                    </p>
+                  </div>
+                  <div class="px-14">
+                    <div class="mb-3">
+                      <p class="text-base">
+                        <span
+                          class="personal-detail-title relative pr-10 block float-left w-[220px] text-slate-900 dark:text-slate-300 text-base"
+                          >Date of Birth</span
+                        >
+                        <span
+                          class="personal-detail-info text-orange-400 dark:text-orange-300 text-base"
+                          >16 December 1993</span
+                        >
+                      </p>
+                    </div>
+                    <div class="mb-3">
+                      <p>
+                        <span
+                          class="personal-detail-title relative pr-10 block float-left w-[220px] text-slate-900 dark:text-slate-300 text-base"
+                          >Spoken Languages</span
+                        >
+                        <span
+                          class="personal-detail-info text-orange-400 dark:text-orange-300 text-base"
+                          >Myanmar - English
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="mb-3">
+                      <p>
+                        <span
+                          class="personal-detail-title relative pr-10 block float-left w-[220px] text-slate-900 dark:text-slate-300 text-base"
+                          >Nationality</span
+                        >
+                        <span
+                          class="personal-detail-info text-orange-400 dark:text-orange-300 text-base"
+                          >Myanmar</span
+                        >
+                      </p>
+                    </div>
+                    <div class="mb-3">
+                      <p>
+                        <span
+                          class="personal-detail-title relative pr-10 block float-left w-[220px] text-slate-900 dark:text-slate-300 text-base"
+                          >Interest</span
+                        >
+                        <span
+                          class="personal-detail-info text-orange-400 dark:text-slate-300 text-base"
+                          >Coding</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="flex space-x-4">
+                      <span class=""
+                        ><a href=""
+                          ><i
+                            class="fa-brands fa-github text-2xl text-black dark:text-white"
+                          ></i></a
+                      ></span>
+                      <span class=""
+                        ><a href="">
+                          <i
+                            class="fa-brands fa-google text-2xl text-black dark:text-white"
+                          ></i> </a
+                      ></span>
+                      <span class=""
+                        ><a href="">
+                          <i
+                            class="fa-brands fa-instagram text-2xl text-black dark:text-white"
+                          ></i> </a
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="text-gray-600 body-font pt-10" id="section_experience">
+      <div class="container md:px-20 px-12 py-6 mx-auto">
+        <div class="">
+          <div class="p-2 md:w-full w-full">
+            <div
+              class="h-full flex items-center border-gray-200 p-4 rounded-lg bg-[#f7f7f7] dark:bg-[#121212]"
+            >
+              <div class="">
+                <h2
+                  class="text-slate-900 dark:text-slate-300 text-center sm:text-3xl text-2xl title-font font-semibold py-6"
+                >
+                  Professional Experience
+                </h2>
+
+                <div class="">
+                  <div class="flex relative pb-20 md:w-3/4 mx-auto">
+                    <div
+                      class="h-full w-6 absolute inset-0 flex items-center justify-center"
+                    >
+                      <div
+                        class="h-full w-1 bg-gray-200 pointer-events-none"
+                      ></div>
+                    </div>
+                    <div
+                      class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-orange-500 text-white relative z-10 title-font font-medium text-sm"
+                    >
+                      <div
+                        class="flex-shrink-0 w-14 h-14 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-orange-500 text-white relative z-10 title-font font-medium text-sm"
+                      >
+                        <span class=""
+                          ><i class="fa-solid fa-location-dot text-3xl"></i
+                        ></span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex-grow md:p-8 ml-14 p-6 flex items-start flex-col sm:flex-row outline-none shadow-sm shadow-slate-400 rounded-md bg-white dark:bg-[#212121]"
+                    >
+                      <div
+                        class="flex-shrink-0 w-24 h-24 bg-orange-500 text-indigo-500 rounded-full inline-flex items-center justify-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="50"
+                          height="50"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                        <div class="flex md:flex-row flex-col justify-between">
+                          <div>
+                            <h2
+                              class="font-medium title-font text-gray-900 dark:text-slate-400 dark:text mb-1 text-2xl"
+                            >
+                              Company Name
+                            </h2>
+                          </div>
+                          <div>
+                            <p class="text-orange-400 dark:text-orange-300">
+                              2017-2019
+                            </p>
+                          </div>
+                        </div>
+                        <div class="leading-relaxed">
+                          <h3
+                            class="text-2xl text-slate-900 dark:text-slate-400"
+                          >
+                            Software Engineer
+                          </h3>
+                          <div class="">
+                            <span class="mr-1"
+                              ><i class="fa-solid fa-location-dot"></i
+                            ></span>
+                            <span class="text-slate-900 dark:text-slate-300"
+                              >Munich, Germany</span
+                            >
+                          </div>
+                          <p class="text-slate-900 dark:text-slate-300">
+                            Design, development and integration of scenarios
+                            around Robotics, Reality Capture with Mixed Reality
+                            and the Metaverse. Spot robot early adopters and
+                            Boston Dynamics official partners.
+                          </p>
+                          <div>
+                            <span class="mr-1"
+                              ><i class="fa-solid fa-location-dot"></i
+                            ></span>
+                            <span class="text-slate-900 dark:text-slate-300"
+                              >Milan, Italy (January 2021 – October 2022)</span
+                            >
+                          </div>
+                          <p class="text-slate-900 dark:text-slate-300">
+                            Design, development and integration of solutions
+                            around Robotics, AI and Computer Vision for
+                            enterprises.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex relative pb-20 md:w-3/4 mx-auto">
+                    <div
+                      class="h-full w-6 absolute inset-0 flex items-center justify-center"
+                    >
+                      <div
+                        class="h-full w-1 bg-gray-200 pointer-events-none"
+                      ></div>
+                    </div>
+                    <div
+                      class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-orange-500 text-white relative z-10 title-font font-medium text-sm"
+                    >
+                      <div
+                        class="flex-shrink-0 w-14 h-14 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-orange-500 text-white relative z-10 title-font font-medium text-sm"
+                      >
+                        <span class=""
+                          ><i class="fa-solid fa-location-dot text-3xl"></i
+                        ></span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex-grow md:p-8 ml-14 p-6 flex items-start flex-col sm:flex-row outline-none shadow-sm shadow-slate-400 rounded-md bg-white dark:bg-[#212121]"
+                    >
+                      <div
+                        class="flex-shrink-0 w-24 h-24 bg-orange-500 text-indigo-500 rounded-full inline-flex items-center justify-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="50"
+                          height="50"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                        <div class="flex md:flex-row flex-col justify-between">
+                          <div>
+                            <h2
+                              class="font-medium title-font text-gray-900 dark:text-slate-400 dark:text mb-1 text-2xl"
+                            >
+                              Company Name
+                            </h2>
+                          </div>
+                          <div>
+                            <p class="text-orange-400 dark:text-orange-300">
+                              2017-2019
+                            </p>
+                          </div>
+                        </div>
+                        <div class="leading-relaxed">
+                          <h3
+                            class="text-2xl text-slate-900 dark:text-slate-400"
+                          >
+                            Software Engineer
+                          </h3>
+                          <div class="">
+                            <span class="mr-1"
+                              ><i class="fa-solid fa-location-dot"></i
+                            ></span>
+                            <span class="text-slate-900 dark:text-slate-300"
+                              >Munich, Germany</span
+                            >
+                          </div>
+                          <p class="text-slate-900 dark:text-slate-300">
+                            Design, development and integration of scenarios
+                            around Robotics, Reality Capture with Mixed Reality
+                            and the Metaverse. Spot robot early adopters and
+                            Boston Dynamics official partners.
+                          </p>
+                          <div>
+                            <span class="mr-1"
+                              ><i class="fa-solid fa-location-dot"></i
+                            ></span>
+                            <span class="text-slate-900 dark:text-slate-300"
+                              >Milan, Italy (January 2021 – October 2022)</span
+                            >
+                          </div>
+                          <p class="text-slate-900 dark:text-slate-300">
+                            Design, development and integration of solutions
+                            around Robotics, AI and Computer Vision for
+                            enterprises.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex relative pb-20 md:w-3/4 mx-auto">
+                    <div
+                      class="h-full w-6 absolute inset-0 flex items-center justify-center"
+                    >
+                      <div
+                        class="h-full w-1 bg-gray-200 pointer-events-none"
+                      ></div>
+                    </div>
+                    <div
+                      class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-orange-500 text-white relative z-10 title-font font-medium text-sm"
+                    >
+                      <div
+                        class="flex-shrink-0 w-14 h-14 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-orange-500 text-white relative z-10 title-font font-medium text-sm"
+                      >
+                        <span class=""
+                          ><i class="fa-solid fa-location-dot text-3xl"></i
+                        ></span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex-grow md:p-8 ml-14 p-6 flex items-start flex-col sm:flex-row outline-none shadow-sm shadow-slate-400 rounded-md bg-white dark:bg-[#212121]"
+                    >
+                      <div
+                        class="flex-shrink-0 w-24 h-24 bg-orange-500 text-indigo-500 rounded-full inline-flex items-center justify-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="50"
+                          height="50"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                        <div class="flex md:flex-row flex-col justify-between">
+                          <div>
+                            <h2
+                              class="font-medium title-font text-gray-900 dark:text-slate-400 dark:text mb-1 text-2xl"
+                            >
+                              Company Name
+                            </h2>
+                          </div>
+                          <div>
+                            <p class="text-orange-400 dark:text-orange-300">
+                              2017-2019
+                            </p>
+                          </div>
+                        </div>
+                        <div class="leading-relaxed">
+                          <h3
+                            class="text-2xl text-slate-900 dark:text-slate-400"
+                          >
+                            Software Engineer
+                          </h3>
+                          <div class="">
+                            <span class="mr-1"
+                              ><i class="fa-solid fa-location-dot"></i
+                            ></span>
+                            <span class="text-slate-900 dark:text-slate-300"
+                              >Munich, Germany</span
+                            >
+                          </div>
+                          <p class="text-slate-900 dark:text-slate-300">
+                            Design, development and integration of scenarios
+                            around Robotics, Reality Capture with Mixed Reality
+                            and the Metaverse. Spot robot early adopters and
+                            Boston Dynamics official partners.
+                          </p>
+                          <div>
+                            <span class="mr-1"
+                              ><i class="fa-solid fa-location-dot"></i
+                            ></span>
+                            <span class="text-slate-900 dark:text-slate-300"
+                              >Milan, Italy (January 2021 – October 2022)</span
+                            >
+                          </div>
+                          <p class="text-slate-900 dark:text-slate-300">
+                            Design, development and integration of solutions
+                            around Robotics, AI and Computer Vision for
+                            enterprises.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex relative pb-20 md:w-3/4 mx-auto">
+                    <div
+                      class="h-full w-6 absolute inset-0 flex items-center justify-center"
+                    >
+                      <div
+                        class="h-full w-1 bg-gray-200 pointer-events-none"
+                      ></div>
+                    </div>
+                    <div
+                      class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-orange-500 text-white relative z-10 title-font font-medium text-sm"
+                    >
+                      <div
+                        class="flex-shrink-0 w-14 h-14 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-orange-500 text-white relative z-10 title-font font-medium text-sm"
+                      >
+                        <span class=""
+                          ><i class="fa-solid fa-location-dot text-3xl"></i
+                        ></span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex-grow md:p-8 ml-14 p-6 flex items-start flex-col sm:flex-row outline-none shadow-sm shadow-slate-400 rounded-md bg-white dark:bg-[#212121]"
+                    >
+                      <div
+                        class="flex-shrink-0 w-24 h-24 bg-orange-500 text-indigo-500 rounded-full inline-flex items-center justify-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="50"
+                          height="50"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                        <div class="flex md:flex-row flex-col justify-between">
+                          <div>
+                            <h2
+                              class="font-medium title-font text-gray-900 dark:text-slate-400 dark:text mb-1 text-2xl"
+                            >
+                              Company Name
+                            </h2>
+                          </div>
+                          <div>
+                            <p class="text-orange-400 dark:text-orange-300">
+                              2017-2019
+                            </p>
+                          </div>
+                        </div>
+                        <div class="leading-relaxed">
+                          <h3
+                            class="text-2xl text-slate-900 dark:text-slate-400"
+                          >
+                            Software Engineer
+                          </h3>
+                          <div class="">
+                            <span class="mr-1"
+                              ><i class="fa-solid fa-location-dot"></i
+                            ></span>
+                            <span class="text-slate-900 dark:text-slate-300"
+                              >Munich, Germany</span
+                            >
+                          </div>
+                          <p class="text-slate-900 dark:text-slate-300">
+                            Design, development and integration of scenarios
+                            around Robotics, Reality Capture with Mixed Reality
+                            and the Metaverse. Spot robot early adopters and
+                            Boston Dynamics official partners.
+                          </p>
+                          <div>
+                            <span class="mr-1"
+                              ><i class="fa-solid fa-location-dot"></i
+                            ></span>
+                            <span class="text-slate-900 dark:text-slate-300"
+                              >Milan, Italy (January 2021 – October 2022)</span
+                            >
+                          </div>
+                          <p class="text-slate-900 dark:text-slate-300">
+                            Design, development and integration of solutions
+                            around Robotics, AI and Computer Vision for
+                            enterprises.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="text-gray-600 body-font pt-10" id="section_education">
+      <div class="container md:px-20 px-12 py-6 mx-auto">
+        <div class="flex">
+          <div class="p-2 md:w-full w-full">
+            <div
+              class="h-full flex items-center border-gray-200 p-4 rounded-lg bg-[#f7f7f7] dark:bg-[#121212]"
+            >
+              <div class="">
+                <h2
+                  class="text-slate-900 dark:text-slate-300 text-center sm:text-3xl text-2xl title-font font-semibold py-6"
+                >
+                  Education
+                </h2>
+
+                <div class="container mx-auto p-2 md:px-20 w-full">
+                  <div
+                    class="h-full flex flex-col md:flex-row items-center border-gray-200 p-4 rounded-lg bg-white dark:bg-[#212121]"
+                  >
+                    <img
+                      alt="team"
+                      class="w-58 h- bg-gray-100 object-cover object-center flex-shrink-0 mr-4"
+                      src="../assets/image/Logo_of_UTYCC.jpg"
+                      alt="logo of Logo_of_UTYCC"
+                    />
+                    <div class="">
+                      <div
+                        class="flex md:justify-between justify-start md:flex-row flex-col-reverse"
+                      >
+                        <div class="text-gray-900 dark:text-slate-400">
+                          <h2 class="title-font text-xl">
+                            University of Technology (Yatanarpon Cyber City),
+                          </h2>
+                          <h2 class="title-font text-xl">Myanmar</h2>
+                        </div>
+
+                        <p class="text-orange-400 md:pl-10">2010 – 2015</p>
+                      </div>
+
+                      <h2 class="text-gray-900 dark:text-slate-400">
+                        <i>Bachelor Degree - Electronics Engineering </i>
+                      </h2>
+
+                      <div class="">
+                        <ol
+                          class="space-y-4 list-inside text-gray-600 dark:text-gray-400"
+                        >
+                          <li class="text-gray-600">
+                            Bachelor Thesis
+                            <ul
+                              class="pl-5 mt-2 space-y-1 list-disc list-outside"
+                            >
+                              <li>
+                                Design and Simulation of Printer Belt Drive
+                                System
+                              </li>
+
+                              <a href=""
+                                ><span class="mr-1 text-orange-500">
+                                  Download (preview)</span
+                                >
+                                <i
+                                  class="fa-sharp fa-solid fa-download text-orange-500 text-lg"
+                                ></i
+                              ></a>
+                            </ul>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container mx-auto p-2 md:px-20 w-full">
+                  <div
+                    class="h-full flex flex-col md:flex-row items-center border-gray-200 p-4 rounded-lg bg-white dark:bg-[#212121]"
+                  >
+                    <img
+                      alt="team"
+                      class="w-58 h- bg-gray-100 object-cover object-center flex-shrink-0 mr-4"
+                      src="../assets/image/Logo_of_UTYCC.jpg"
+                      alt="logo of Logo_of_UTYCC"
+                    />
+                    <div class="">
+                      <div
+                        class="flex md:justify-between justify-start md:flex-row flex-col-reverse"
+                      >
+                        <div class="text-gray-900 dark:text-slate-400">
+                          <h2 class="title-font text-xl">
+                            University of Technology (Yatanarpon Cyber City),
+                          </h2>
+                          <h2 class="title-font text-xl">Myanmar</h2>
+                        </div>
+
+                        <p class="text-orange-400 md:pl-10">2010 – 2015</p>
+                      </div>
+
+                      <h2 class="text-gray-500">
+                        <i>Master Degree - Master of Engineering </i>
+                      </h2>
+
+                      <div class="">
+                        <ol
+                          class="space-y-4 list-inside text-gray-600 dark:text-gray-400"
+                        >
+                          <li class="text-gray-600">
+                            Master Thesis
+                            <ul
+                              class="pl-5 mt-2 space-y-1 list-disc list-outside"
+                            >
+                              <li>Nursing Home Monitoring System</li>
+
+                              <a href=""
+                                ><span class="mr-1 text-orange-500">
+                                  Download (preview)</span
+                                >
+                                <i
+                                  class="fa-sharp fa-solid fa-download text-orange-500 text-lg"
+                                ></i
+                              ></a>
+                            </ul>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container mx-auto p-2 md:px-20 w-full">
+                  <div
+                    class="h-full flex flex-col md:flex-row items-center border-gray-200 p-4 rounded-lg bg-white dark:bg-[#212121]"
+                  >
+                    <img
+                      alt="team"
+                      class="w-58 h-60 bg-gray-100 object-cover object-center flex-shrink-0 mr-2"
+                      src="../assets/image/miyazagi.jpg"
+                      alt="logo of Logo_of_miyazagi"
+                    />
+                    <div class="">
+                      <div
+                        class="flex md:justify-between justify-start md:flex-row flex-col-reverse"
+                      >
+                        <div class="text-gray-900 dark:text-slate-400">
+                          <h2 class="title-font text-xl">
+                            University of Miyazaki, Miyazaki,
+                          </h2>
+                          <h2 class="title-font text-xl">Japan</h2>
+                        </div>
+
+                        <p class="text-orange-400 md:pl-44">2010 – 2015</p>
+                      </div>
+
+                      <h2 class="text-gray-500">
+                        <i>Masters’ Double Degree – Computer Engineering </i>
+                      </h2>
+
+                      <div class="">
+                        <ol
+                          class="space-y-4 list-inside text-gray-600 dark:text-gray-400"
+                        >
+                          <li class="text-gray-600">
+                            Masters’ Double Degree Program Thesis
+
+                            <ul
+                              class="pl-5 mt-2 space-y-1 list-disc list-outside"
+                            >
+                              <li>
+                                Monitoring System for Elderly People Living
+                                Alone
+                              </li>
+
+                              <a href=""
+                                ><span class="mr-1 text-orange-500">
+                                  Download (preview)</span
+                                >
+                                <i
+                                  class="fa-sharp fa-solid fa-download text-orange-500 text-lg"
+                                ></i
+                              ></a>
+                            </ul>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="text-gray-600 body-font pt-10" id="section_skills">
+      <div
+        class="container md:px-20 px-12 py-6 mx-auto duration-200 animate__animated"
+        id="about"
+      >
+        <div class="">
+          <div class="p-2 md:w-full w-full">
+            <div
+              class="h-full flex items-center border-gray-200 p-4 rounded-lg bg-[#f7f7f7] dark:bg-[#121212]"
+            >
+              <div class="">
+                <h2
+                  class="text-slate-900 dark:text-slate-300 text-center sm:text-3xl text-2xl title-font font-semibold py-6"
+                >
+                  Skills
+                </h2>
+                <div class="container mx-auto px-20">
+                  <ul
+                    class="mb-8 space-y-4 text-left text-gray-500 dark:text-gray-400"
+                  >
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span
+                        >Experienced with implementation of computer vision
+                        applications</span
+                      >
+                    </li>
+
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span
+                        >Proficient in image processing, machine learning, deep
+                        learning</span
+                      >
+                    </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span
+                        >Adept with object detection, classification, semantic
+                        and instance segmentation (YOLO, CNN, Faster-RCNN, Mask
+                        R-CNN, Key Points Detection, Regression, LSTM,
+                        Detectron2 and so on)</span
+                      >
+                    </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>Strong coding and design in MATLAB</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span
+                        >Skilled in deep learning frameworks such as Tensorflow,
+                        Pytorch and machine learning libraries such as NumPy,
+                        Matplotlib, Opencv, Scikit-learn and so on</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="text-gray-600 body-font pt-10" id="section_projects">
+      <div
+        class="container md:px-20 px-12 py-6 mx-auto duration-200 animate__animated"
+        id="about"
+      >
+        <div class="">
+          <div class="p-2 md:w-full w-full container mx-auto">
+            <div
+              class="h-full flex items-center border-gray-200 p-4 rounded-lg bg-[#f7f7f7] dark:bg-[#121212]"
+            >
+              <div class="container mx-auto px-14">
+                <h2
+                  class="text-slate-900 dark:text-slate-300 text-center sm:text-3xl text-2xl title-font font-semibold py-6"
+                >
+                  Projects
+                </h2>
+                <div class="">
+                  <div
+                    class="card card-side bg-base-100 shadow-xl flex md:flex-row flex-col mb-5"
+                  >
+                    <figure>
+                      <img src="../assets/image/logo.png" alt="Movie" />
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Audio Analyzer</h2>
+                      <p>
+                        An audio analyzer and controller for an Arduino-driven
+                        LED strip.
+                      </p>
+                      <div class="card-actions justify-end">
+                        <label for="my-modal-3" class="btn">Detail</label>
+                        <input
+                          type="checkbox"
+                          id="my-modal-3"
+                          class="modal-toggle"
+                        />
+                        <div class="modal">
+                          <div class="modal-box w-11/12 max-w-5xl relative">
+                            <label
+                              for="my-modal-3"
+                              class="btn btn-sm btn-circle absolute right-2 top-2"
+                              >✕</label
+                            >
+                            <h3 class="text-lg font-bold">
+                              Congratulations random Internet user!
+                            </h3>
+                            <p class="py-4">
+                              You've been selected for a chance to get one year
+                              of subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free!
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="card card-side bg-base-100 shadow-xl flex md:flex-row flex-col mb-5"
+                  >
+                    <figure>
+                      <img src="../assets/image/logo.png" alt="Movie" />
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">New movie is released!</h2>
+                      <p>Click the button to watch on Jetflix app.</p>
+                      <div class="card-actions justify-end">
+                        <label for="my-modal-3" class="btn">Detail</label>
+                        <input
+                          type="checkbox"
+                          id="my-modal-3"
+                          class="modal-toggle"
+                        />
+                        <div class="modal">
+                          <div class="modal-box w-11/12 max-w-5xl relative">
+                            <label
+                              for="my-modal-3"
+                              class="btn btn-sm btn-circle absolute right-2 top-2"
+                              >✕</label
+                            >
+                            <h3 class="text-lg font-bold">
+                              Congratulations random Internet user!
+                            </h3>
+                            <p class="py-4">
+                              You've been selected for a chance to get one year
+                              of subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free!
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="card card-side bg-base-100 shadow-xl flex md:flex-row flex-col mb-5"
+                  >
+                    <figure>
+                      <img src="../assets/image/logo.png" alt="Movie" />
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">New movie is released!</h2>
+                      <p>Click the button to watch on Jetflix app.</p>
+                      <div class="card-actions justify-end">
+                        <label for="my-modal-3" class="btn">Detail</label>
+                        <input
+                          type="checkbox"
+                          id="my-modal-3"
+                          class="modal-toggle"
+                        />
+                        <div class="modal">
+                          <div class="modal-box w-11/12 max-w-5xl relative">
+                            <label
+                              for="my-modal-3"
+                              class="btn btn-sm btn-circle absolute right-2 top-2"
+                              >✕</label
+                            >
+                            <h3 class="text-lg font-bold">
+                              Congratulations random Internet user!
+                            </h3>
+                            <p class="py-4">
+                              You've been selected for a chance to get one year
+                              of subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free!
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="card card-side bg-base-100 shadow-xl flex md:flex-row flex-col mb-5"
+                  >
+                    <figure>
+                      <img src="../assets/image/logo.png" alt="Movie" />
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">New movie is released!</h2>
+                      <p>Click the button to watch on Jetflix app.</p>
+                      <div class="card-actions justify-end">
+                        <label for="my-modal-3" class="btn">See More</label>
+                        <input
+                          type="checkbox"
+                          id="my-modal-3"
+                          class="modal-toggle"
+                        />
+                        <div class="modal">
+                          <div class="modal-box w-11/12 max-w-5xl relative">
+                            <label
+                              for="my-modal-3"
+                              class="btn btn-sm btn-circle absolute right-2 top-2"
+                              >✕</label
+                            >
+                            <h3 class="text-lg font-bold">
+                              Congratulations random Internet user!
+                            </h3>
+                            <p class="py-4">
+                              You've been selected for a chance to get one year
+                              of subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free!
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="card card-side bg-base-100 shadow-xl flex md:flex-row flex-col mb-5"
+                  >
+                    <figure>
+                      <img src="../assets/image/logo.png" alt="Movie" />
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">New movie is released!</h2>
+                      <p>Click the button to watch on Jetflix app.</p>
+                      <div class="card-actions justify-end">
+                        <label for="my-modal-3" class="btn">Detail</label>
+                        <input
+                          type="checkbox"
+                          id="my-modal-3"
+                          class="modal-toggle"
+                        />
+                        <div class="modal">
+                          <div class="modal-box w-11/12 max-w-5xl relative">
+                            <label
+                              for="my-modal-3"
+                              class="btn btn-sm btn-circle absolute right-2 top-2"
+                              >✕</label
+                            >
+                            <h3 class="text-lg font-bold">
+                              Congratulations random Internet user!
+                            </h3>
+                            <p class="py-4">
+                              You've been selected for a chance to get one year
+                              of subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free! You've
+                              been selected for a chance to get one year of
+                              subscription to use Wikipedia for free!
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- clients -->
+                  <div class="text-gray-600 body-font">
+                    <div class="container px-5 py-24 mx-auto">
+                      <div class="text-center mb-20">
+                        <h1
+                          class="sm:text-3xl text-3xl font-bold text-center title-font text-gray-900 dark:text-white mb-4"
+                        >
+                          To see more of my projects...
+                        </h1>
+                      </div>
+
+                      <button
+                        class="flex mx-auto mt-16 text-white font-bold bg-orange-500 border-0 py-4 px-8 focus:outline-none hover:bg-opacity-90 rounded text-lg items-center transition-colors duration-200 ease-in-out"
+                      >
+                        Visit My Github &nbsp;<i
+                          class="fa-brands fa-github"
+                        ></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publication Paper Lists -->
+    <section class="text-gray-600 body-font pt-10" id="section_papers">
+      <div class="container md:px-20 px-12 py-6 mx-auto">
+        <div class="flex">
+          <div class="p-2 md:w-full w-full">
+            <div
+              class="h-full flex items-center border-gray-200 p-4 rounded-lg bg-orange-500 dark:bg-[#121212]"
+            >
+              <div>
+                <h2
+                  class="text-white text-center sm:text-3xl text-5xl title-font font-semibold py-6"
+                >
+                  Lists of Publication
+                </h2>
+                <div class="p-2 md:w-full w-full">
+                  <div class="h-full border-gray-200 rounded-lg">
+                    <div
+                      class="container mx-auto md:px-5 w-full flex flex-col items-center"
+                    >
+                      <div
+                        class="w-full space-y-1 text-gray-500 list-none list-inside dark:text-gray-400 text-center mb-4"
+                      >
+                        <a href="" download=""
+                          ><h5 class="text-white text-2xl font-semibold">
+                            Behavior Analysis for Nursing Home Monitoring System
+                          </h5>
+                        </a>
+
+                        <p class="text-white text-lg">
+                          Pann Thinzar Seint. 2018 <br />
+                          <a
+                            href="https://link.springer.com/chapter/10.1007%2F978-981-13-0869-7_31"
+                            target="blank
+                            "
+                            >link.springer</a
+                          >
+                          <span>|</span>
+                          <a href=""
+                            ><span class="mr-1 text-white-500"> Download</span>
+                            <i
+                              class="fa-sharp fa-solid fa-download text-white text-lg"
+                            ></i
+                          ></a>
+                        </p>
+                      </div>
+                      <div
+                        class="w-full space-y-1 text-gray-500 list-none list-inside dark:text-gray-400 text-center mb-4"
+                      >
+                        <a href=""
+                          ><h5 class="text-white text-2xl font-semibold">
+                            Medication and Meal Intake Monitoring using
+                            Human-Object Interaction
+                          </h5>
+                        </a>
+
+                        <p class="text-white text-lg">
+                          Pann Thinzar Seint. 2018 <br />
+                          <a
+                            href="https://ieeexplore.ieee.org/document/8574854
+                            "
+                            target="blank
+                          "
+                            >ieeexplore.ieee</a
+                          >
+                          <span>|</span>
+                          <a href="" download=""
+                            ><span class="mr-1 text-white-500"> Download</span>
+                            <i
+                              class="fa-sharp fa-solid fa-download text-white text-lg"
+                            ></i
+                          ></a>
+                        </p>
+                      </div>
+                      <div
+                        class="w-full space-y-1 text-gray-500 list-none list-inside dark:text-gray-400 text-center mb-4"
+                      >
+                        <a href=""
+                          ><h5 class="text-white text-2xl font-semibold">
+                            Intelligent Monitoring for Elder Care Using
+                            Vision-based Technology
+                          </h5>
+                        </a>
+
+                        <p class="text-white text-lg">
+                          Pann Thinzar Seint. 2018 <br />
+                          <a
+                            href="http://www.ijicic.org/ijicic-170310.pdf
+                          "
+                            target="blank
+                        "
+                            >ijicic.org</a
+                          >
+                          <span>|</span>
+                          <a href="" download=""
+                            ><span class="mr-1 text-white-500"> Download</span>
+                            <i
+                              class="fa-sharp fa-solid fa-download text-white text-lg"
+                            ></i
+                          ></a>
+                        </p>
+                      </div>
+                      <div
+                        class="w-full space-y-1 text-gray-500 list-none list-inside dark:text-gray-400 text-center mb-4"
+                      >
+                        <a href=""
+                          ><h5 class="text-white text-2xl font-semibold">
+                            Intelligent Monitoring System for Elderly People
+                            Activity Recognition using Artificial Neural Network
+                          </h5>
+                        </a>
+
+                        <p class="text-white text-lg">
+                          Pann Thinzar Seint. 2018 <br />
+                          <a
+                            href="
+                        "
+                            target="blank
+                      "
+                            >PROCEEDINGS OF CONFERENCE ON SCIENCE AND TECHNOLOGY
+                            DEVELOPMENT 2018,<br />
+                            Pyin Oo Lwin, Myanmar, Volume: 2</a
+                          >
+                          <span>|</span>
+                          <a href="" download=""
+                            ><span class="mr-1 text-white-500"> Download</span>
+                            <i
+                              class="fa-sharp fa-solid fa-download text-white text-lg"
+                            ></i
+                          ></a>
+                        </p>
+                      </div>
+                      <div
+                        class="w-full space-y-1 text-gray-500 list-none list-inside dark:text-gray-400 text-center mb-4"
+                      >
+                        <a href="" download=""
+                          ><h5 class="text-white text-2xl font-semibold">
+                            Body Condition Score Estimation Based on Regression
+                            Analysis Using a 3D Camera
+                          </h5>
+                        </a>
+
+                        <p class="text-white text-lg">
+                          Pann Thinzar Seint. 2018 <br />
+                          <a
+                            href="https://www.mdpi.com/1424-8220/20/13/3705
+                            "
+                            target="blank
+                          "
+                            >mdpi</a
+                          >
+                          <span>|</span>
+                          <a href=""
+                            ><span class="mr-1 text-white-500"> Download</span>
+                            <i
+                              class="fa-sharp fa-solid fa-download text-white text-lg"
+                            ></i
+                          ></a>
+                        </p>
+                      </div>
+                      <div
+                        class="w-full space-y-1 text-gray-500 list-none list-inside dark:text-gray-400 text-center mb-4"
+                      >
+                        <a href="" download=""
+                          ><h5 class="text-white text-2xl font-semibold">
+                            Body Condition Score Assessment of Depth Image using
+                            Artificial Neural Network
+                          </h5>
+                        </a>
+
+                        <p class="text-white text-lg">
+                          Pann Thinzar Seint. 2018 <br />
+                          <a
+                            href="https://dl.acm.org/doi/10.1145/3408066.3408103
+                          
+                            "
+                            target="blank
+                          "
+                            >dl.acm.org</a
+                          >
+                          <span>|</span>
+                          <a href=""
+                            ><span class="mr-1 text-white-500"> Download</span>
+                            <i
+                              class="fa-sharp fa-solid fa-download text-white text-lg"
+                            ></i
+                          ></a>
+                        </p>
+                      </div>
+                      <div
+                        class="w-full space-y-1 text-gray-500 list-none list-inside dark:text-gray-400 text-center mb-4"
+                      >
+                        <a href="" download=""
+                          ><h5 class="text-white text-2xl font-semibold">
+                            Automatic Cow Location Tracking System Using Ear Tag
+                            Visual Analysis
+                          </h5>
+                        </a>
+
+                        <p class="text-white text-lg">
+                          Pann Thinzar Seint. 2018 <br />
+                          <a
+                            href="https://www.mdpi.com/1424-8220/20/12/3564  "
+                            target="blank
+                        "
+                            >mdpi</a
+                          >
+                          <span>|</span>
+                          <a href=""
+                            ><span class="mr-1 text-white-500"> Download</span>
+                            <i
+                              class="fa-sharp fa-solid fa-download text-white text-lg"
+                            ></i
+                          ></a>
+                        </p>
+                      </div>
+                      <div
+                        class="w-full space-y-1 text-gray-500 list-none list-inside dark:text-gray-400 text-center mb-4"
+                      >
+                        <a href="" download=""
+                          ><h5 class="text-white text-2xl font-semibold">
+                            Cow Identification System using Ear Tag Recognition
+                          </h5>
+                        </a>
+
+                        <p class="text-white text-lg">
+                          Pann Thinzar Seint. 2018 <br />
+                          <a
+                            href="https://ieeexplore.ieee.org/document/9081226"
+                            target="blank
+                        "
+                            >ieeexplore.ieee.org</a
+                          >
+                          <span>|</span>
+                          <a href=""
+                            ><span class="mr-1 text-white-500"> Download</span>
+                            <i
+                              class="fa-sharp fa-solid fa-download text-white text-lg"
+                            ></i
+                          ></a>
+                        </p>
+                      </div>
+                      <div
+                        class="w-full space-y-1 text-gray-500 list-none list-inside dark:text-gray-400 text-center mb-4"
+                      >
+                        <a href="" download=""
+                          ><h5 class="text-white text-2xl font-semibold">
+                            Markov Chain Monte Carlo Method for the Modeling of
+                            Posture Changes Prior to Calving
+                          </h5>
+                        </a>
+
+                        <p class="text-white text-lg">
+                          Pann Thinzar Seint. 2018 <br />
+                          <a
+                            href="https://ieeexplore.ieee.org/document/9391822"
+                            target="blank
+                        "
+                            >ieeexplore.ieee.org</a
+                          >
+                          <span>|</span>
+                          <a href=""
+                            ><span class="mr-1 text-white-500"> Download</span>
+                            <i
+                              class="fa-sharp fa-solid fa-download text-white text-lg"
+                            ></i
+                          ></a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="text-gray-600 body-font pt-10" id="section_contact">
+      <div
+        class="container md:px-20 px-12 py-6 mx-auto duration-200 animate__animated"
+        id="about"
+      >
+        <div class="">
+          <div class="p-2 md:w-full w-full container mx-auto">
+            <div
+              class="h-full flex items-center border-gray-200 p-4 rounded-lg bg-[#f7f7f7] dark:bg-[#121212]"
+            >
+              <section class="text-gray-600 body-font relative">
+                <div class="container px-5 py-24 mx-auto">
+                  <div class="flex flex-col text-center w-full mb-12">
+                    <h1
+                      class="sm:text-3xl text-lg font-medium title-font mb-4 text-gray-900 dark:text-white"
+                    >
+                      Contact
+                    </h1>
+                    <h3
+                      class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900 dark:text-white"
+                    >
+                      Get In <span class="text-orange-500">Touch</span>
+                    </h3>
+                  </div>
+                  <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                    <div class="flex flex-wrap -m-2">
+                      <div class="p-2 w-full md:w-1/2">
+                        <div class="">
+                          <label
+                            for="name"
+                            class="leading-7 text-sm text-gray-600"
+                            >Name</label
+                          >
+                          <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-100 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                          />
+                        </div>
+                      </div>
+                      <div class="p-2 w-full md:w-1/2">
+                        <div class="">
+                          <label
+                            for="email"
+                            class="leading-7 text-sm text-gray-600"
+                            >Email</label
+                          >
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-100 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                          />
+                        </div>
+                      </div>
+                      <div class="p-2 w-full">
+                        <div class="">
+                          <label
+                            for="message"
+                            class="leading-7 text-sm text-gray-600"
+                            >Message</label
+                          >
+                          <textarea
+                            id="message"
+                            name="message"
+                            class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-100 focus:bg-white focus:ring-2 focus:ring-gray-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                          ></textarea>
+                        </div>
+                      </div>
+                      <div class="p-2 w-full">
+                        <button
+                          type="submit"
+                          class="text-white w-full bg-orange-500 border-0 py-2 px-8 focus:outline-none hover:bg-opacity-90 rounded text-lg"
+                        >
+                          Send
+                        </button>
+                      </div>
+                      <div
+                        class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"
+                      >
+                        <a class="text-orange-500">panthinzarseint@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-gray-900 body-font">
+      <div
+        class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col"
+      >
+        <a
+          class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+        >
+          <img
+            src="../assets/image/logo.png"
+            alt="PS logo"
+            class="w-10 h-10 rounded-full"
+          />
+          <!-- <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-10 h-10 text-white p-2 bg-orange-500 rounded-full"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+            ></path>
+          </svg> -->
+          <span class="ml-3 text-xl text-gray-500">Pann Thinzar Seint</span>
+        </a>
+        <p
+          class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"
+        >
+          © 2023
+        </p>
+        <span
+          class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start"
+        >
+          <a class="text-gray-500">
+            <svg
+              fill="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+              ></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg
+              fill="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+              ></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path
+                d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+              ></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="0"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="none"
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+              ></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"
+      integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./customize.js"></script>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+      });
+    </script>
+  </body>
+</html>
