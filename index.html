@@ -10,7 +10,7 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="/dist/output.css" />
     <!-- animate.css -->
     <link
       rel="stylesheet"
@@ -47,7 +47,7 @@ font-family: 'Source Serif Pro', serif; -->
         scroll-behavior: smooth;
       }
       .lead {
-        background: url(./assets/image/robot-4120890_1280.jpg);
+        background: url(../assets/image/robot-4120890_1280.jpg);
 
         background-attachment: fixed;
       }
@@ -70,6 +70,20 @@ font-family: 'Source Serif Pro', serif; -->
       }
       input:checked ~ .bb {
         background-color: #ffffff;
+      }
+      .heading {
+        position: relative;
+      }
+      .heading:after {
+        position: absolute;
+        content: "";
+        top: 75%;
+        height: 1.8px;
+        width: 50px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: #ff6a00;
       }
     </style>
     <script>
@@ -99,7 +113,7 @@ font-family: 'Source Serif Pro', serif; -->
             <div class="w-12">
               <a href="#" title="logo">
                 <img
-                  src="./assets/image/logo.png"
+                  src="../assets/image/logo.png"
                   alt="PS logo"
                   class="rounded-full"
                 />
@@ -193,7 +207,7 @@ font-family: 'Source Serif Pro', serif; -->
       <div class="lead-content absolute space-y-4 text-center">
         <div class="flex justify-center pt-11">
           <img
-            src="./assets/image/woman-3116587_1280.jpg"
+            src="../assets/image/woman-3116587_1280.jpg"
             alt=""
             class="w-60 h-60 rounded-full shadow-md shadow-slate-600"
           />
@@ -738,7 +752,7 @@ font-family: 'Source Serif Pro', serif; -->
                     <img
                       alt="team"
                       class="w-58 h- bg-gray-100 object-cover object-center flex-shrink-0 mr-4"
-                      src="./assets/image/Logo_of_UTYCC.jpg"
+                      src="../assets/image/Logo_of_UTYCC.jpg"
                       alt="logo of Logo_of_UTYCC"
                     />
                     <div class="">
@@ -795,7 +809,7 @@ font-family: 'Source Serif Pro', serif; -->
                     <img
                       alt="team"
                       class="w-58 h- bg-gray-100 object-cover object-center flex-shrink-0 mr-4"
-                      src="./assets/image/Logo_of_UTYCC.jpg"
+                      src="../assets/image/Logo_of_UTYCC.jpg"
                       alt="logo of Logo_of_UTYCC"
                     />
                     <div class="">
@@ -849,7 +863,7 @@ font-family: 'Source Serif Pro', serif; -->
                     <img
                       alt="team"
                       class="w-58 h-60 bg-gray-100 object-cover object-center flex-shrink-0 mr-2"
-                      src="./assets/image/miyazagi.jpg"
+                      src="../assets/image/miyazagi.jpg"
                       alt="logo of Logo_of_miyazagi"
                     />
                     <div class="">
@@ -1055,7 +1069,7 @@ font-family: 'Source Serif Pro', serif; -->
                     class="card card-side bg-base-100 shadow-xl flex md:flex-row flex-col mb-5"
                   >
                     <figure>
-                      <img src="./assets/image/logo.png" alt="Movie" />
+                      <img src="../assets/image/logo.png" alt="Movie" />
                     </figure>
                     <div class="card-body">
                       <h2 class="card-title">Audio Analyzer</h2>
@@ -1099,7 +1113,7 @@ font-family: 'Source Serif Pro', serif; -->
                     class="card card-side bg-base-100 shadow-xl flex md:flex-row flex-col mb-5"
                   >
                     <figure>
-                      <img src="./assets/image/logo.png" alt="Movie" />
+                      <img src="../assets/image/logo.png" alt="Movie" />
                     </figure>
                     <div class="card-body">
                       <h2 class="card-title">New movie is released!</h2>
@@ -1140,7 +1154,7 @@ font-family: 'Source Serif Pro', serif; -->
                     class="card card-side bg-base-100 shadow-xl flex md:flex-row flex-col mb-5"
                   >
                     <figure>
-                      <img src="./assets/image/logo.png" alt="Movie" />
+                      <img src="../assets/image/logo.png" alt="Movie" />
                     </figure>
                     <div class="card-body">
                       <h2 class="card-title">New movie is released!</h2>
@@ -1181,7 +1195,7 @@ font-family: 'Source Serif Pro', serif; -->
                     class="card card-side bg-base-100 shadow-xl flex md:flex-row flex-col mb-5"
                   >
                     <figure>
-                      <img src="./assets/image/logo.png" alt="Movie" />
+                      <img src="../assets/image/logo.png" alt="Movie" />
                     </figure>
                     <div class="card-body">
                       <h2 class="card-title">New movie is released!</h2>
@@ -1222,7 +1236,7 @@ font-family: 'Source Serif Pro', serif; -->
                     class="card card-side bg-base-100 shadow-xl flex md:flex-row flex-col mb-5"
                   >
                     <figure>
-                      <img src="./assets/image/logo.png" alt="Movie" />
+                      <img src="../assets/image/logo.png" alt="Movie" />
                     </figure>
                     <div class="card-body">
                       <h2 class="card-title">New movie is released!</h2>
@@ -1667,7 +1681,7 @@ font-family: 'Source Serif Pro', serif; -->
           class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
         >
           <img
-            src="./assets/image/logo.png"
+            src="../assets/image/logo.png"
             alt="PS logo"
             class="w-10 h-10 rounded-full"
           />
@@ -1766,7 +1780,7 @@ font-family: 'Source Serif Pro', serif; -->
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./src/customize.js"></script>
+    <script src="./customize.js"></script>
 
     <!-- AOS Library JS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
