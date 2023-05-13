@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>PTZS Portfolio</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css"
@@ -180,7 +180,7 @@ font-family: 'Source Serif Pro', serif; -->
                 <a href="#section_experience">Experience</a>
               </li>
               <li class="dark:text-slate-400 text-black md:text-white">
-                <a href="#section_education">Education</a>b
+                <a href="#section_education">Education</a>
               </li>
               <li class="dark:text-slate-400 text-black md:text-white">
                 <a href="#section_skills">Skills</a>
@@ -1460,7 +1460,7 @@ font-family: 'Source Serif Pro', serif; -->
                       <div
                         class="w-full space-y-1 text-gray-500 list-none list-inside dark:text-gray-400 text-center mb-4"
                       >
-                        <a href="../assets/document/ijicic-170310.pdf"
+                        <a href="./assets/document/ijicic-170310.pdf"
                           ><h5
                             class="text-white md:text-2xl text-xl font-semibold"
                           >
@@ -1723,6 +1723,7 @@ font-family: 'Source Serif Pro', serif; -->
                               type="text"
                               id="name"
                               name="name"
+                              required
                               class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-100 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                             />
                           </div>
@@ -1737,6 +1738,8 @@ font-family: 'Source Serif Pro', serif; -->
                             <input
                               type="email"
                               name="email"
+                              id="email"
+                              required
                               class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-100 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                             />
                           </div>
@@ -1749,9 +1752,9 @@ font-family: 'Source Serif Pro', serif; -->
                               >Message</label
                             >
                             <textarea
-                              id="message"
                               name="message"
                               type="text"
+                              required
                               class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-100 focus:bg-white focus:ring-2 focus:ring-gray-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-8 transition-colors duration-200 ease-in-out"
                             ></textarea>
                           </div>
@@ -1770,15 +1773,20 @@ font-family: 'Source Serif Pro', serif; -->
 
                           <p id="my-form-status"></p>
                         </div>
-                        <div
+                        <!-- <div
                           class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"
                         >
                           <a class="text-orange-500"
                             >panthinzarseint@gmail.com</a
                           >
-                        </div>
+                        </div> -->
                       </div>
                     </form>
+                    <div
+                      class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"
+                    >
+                      <a class="text-orange-500">panthinzarseint@gmail.com</a>
+                    </div>
                   </div>
                 </div>
               </section>

@@ -94,7 +94,6 @@ async function handleSubmit(event) {
   })
     .then((response) => {
       if (response.ok) {
-        status.classList.add("success");
         status.innerHTML = "Thanks for your submission!";
         form.reset();
       } else {
@@ -104,13 +103,13 @@ async function handleSubmit(event) {
               .map((error) => error["message"])
               .join(", ");
           } else {
-            status.classList.add("error");
             status.innerHTML = "Oops! There was a problem submitting your form";
           }
         });
       }
     })
     .catch((error) => {
+      // status.classList.add("error");
       status.innerHTML = "Oops! There was a problem submitting your form";
     });
 }
